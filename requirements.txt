@@ -1,0 +1,5 @@
+gradio==4.36.1
+groq
+gtts
+uvicorn
+fastapi
