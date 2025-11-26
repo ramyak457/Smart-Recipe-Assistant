@@ -32,8 +32,10 @@ def run_ocr_and_calories(image, recipe_input=""):
     """
 
     import base64, io
+    image = image.convert("RGB")
+    image.thumbnail((512, 512))
     buffer = io.BytesIO()
-    image.save(buffer, format="PNG")
+    image.save(buffer, format="JPEG",quality=80)
     image_bytes = buffer.getvalue()
     image_b64 = base64.b64encode(image_bytes).decode()
 
@@ -115,7 +117,10 @@ with gr.Blocks(title="Smart Recipe Assistant") as demo:
 
     with gr.Row():
         recipe_input = gr.Textbox(label="Ask Recipe", lines=10, placeholder="Ask recipe here...")
-        image_input = gr.Image(label="Upload Food Image", type="pil")
+        image_input = gr.Image(label="Upload Food Image", type="pil",sources=["upload", "webcam"],format="jpeg",
+        height=512,
+        width=512
+        )
        
 
     mode = gr.Radio(
