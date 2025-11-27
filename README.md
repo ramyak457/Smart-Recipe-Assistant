@@ -1,4 +1,5 @@
 Smart Recipe Assistant — AI-Powered Food OCR & Recipe Generator
+
 🔗 Live Demo (Hugging Face Space)
 
 🚀 Try it here: https://huggingface.co/spaces/ramya457/Smart-Recipe-Assistant
