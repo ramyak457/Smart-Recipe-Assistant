@@ -115,9 +115,9 @@ with gr.Blocks(title="Smart Recipe Assistant") as demo:
                 and even **generates calories or reads recipes aloud — powered by **Groq LLMs**.
             """)
 
-    with gr.Row():
-        recipe_input = gr.Textbox(label="Ask Recipe", lines=10, placeholder="Ask recipe here...")
-        image_input = gr.Image(label="Upload Food Image", type="pil",sources=["upload", "webcam"],format="jpeg",
+    with gr.Row(equal_height=True):
+        recipe_input = gr.Textbox(label="Ask Recipe", placeholder="Ask recipe here...",lines=20)
+        image_input = gr.Image(label="Upload Food Image",type="pil",sources=["upload", "webcam"],format="jpeg",
         height=512,
         width=512
         )
